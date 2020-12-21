@@ -6,11 +6,14 @@ public class MakeBox : MonoBehaviour
 {
     SpriteRenderer MainSpriteRenderer;
 
+    //プレハブ
     public GameObject PresentBox;
-    public GameObject[] PresentBoxs;
+    private GameObject[] PresentBoxs;
     public GameObject PresentSenter;
 
-    public SpriteRenderer[] PresentSprite;
+    private SpriteRenderer[] PresentSprite;
+
+    //素材
     private Sprite[] RedPatter;
     private Sprite[] BluePatter;
     private Sprite[] GreenPatter;
@@ -24,13 +27,12 @@ public class MakeBox : MonoBehaviour
         new Vector3(0, 5),
         new Vector3(-5, 0),
         new Vector3(0, -5),
-
     };
 
     // Start is called before the first frame update
     private void Awake()
     {
-
+        //素材インポート
         RedPatter = Resources.LoadAll<Sprite>("RedSquare");
         BluePatter = Resources.LoadAll<Sprite>("BlueSquare");
         GreenPatter = Resources.LoadAll<Sprite>("GreenSquare");
@@ -38,6 +40,7 @@ public class MakeBox : MonoBehaviour
         PurplePatter = Resources.LoadAll<Sprite>("PurpleSquare");
         WhitePatter = Resources.LoadAll<Sprite>("WhiteSquare");
 
+        //4つのプレゼント
         PresentBoxs = new GameObject[4];
         for(int i = 0; i < PresentBoxs.Length; i ++)
         {
@@ -47,6 +50,8 @@ public class MakeBox : MonoBehaviour
             PresentBoxs[i].transform.SetParent(PresentSenter.transform, true);
             PresentBoxs[i].transform.position = PresentPosi[i];
         }
+
+
         PresentSprite = new SpriteRenderer[6];
         for (int i = 0; i < 6; i++)
         {
@@ -56,14 +61,5 @@ public class MakeBox : MonoBehaviour
         PresentSprite[3].sprite = WhitePatter[3];
         PresentSprite[4].sprite = WhitePatter[4];
         PresentSprite[5].sprite = WhitePatter[5];
-    }
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
