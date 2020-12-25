@@ -5,6 +5,8 @@ using UnityEngine;
 public class MakeBox : MonoBehaviour
 {
     SpriteRenderer MainSpriteRenderer;
+    MakeBoxParts Partscs;
+
 
     //プレハブ
     public GameObject PresentBox;
@@ -34,6 +36,8 @@ public class MakeBox : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        Partscs = GetComponent<MakeBoxParts>();
+
         //素材インポート
         RedPatter = Resources.LoadAll<Sprite>("RedSquare");
         BluePatter = Resources.LoadAll<Sprite>("BlueSquare");
@@ -70,7 +74,8 @@ public class MakeBox : MonoBehaviour
             //すべての面の色をそろえる
             for(int j = 0; j < 6; j++)
             {
-                PresentBoxs[i].transform.GetChild(j).gameObject.GetComponent<SpriteRenderer>().sprite = color[0];
+                Partscs.MakeBox_SolidColor(PresentBoxs[i], color[0]);
+                //PresentBoxs[i].transform.GetChild(j).gameObject.GetComponent<SpriteRenderer>().sprite = color[0];
             }
             //面の数字情報を変える
             for(int j = 0; j < boxnumber.GetLength(1); j++)
@@ -78,13 +83,11 @@ public class MakeBox : MonoBehaviour
                 PresentBoxs[i].transform.GetChild(j + 2).gameObject.GetComponent<SpriteRenderer>().sprite = color[boxnumber[i,j]];
             }
 
+            //面の位置情報を入れ替える
+
+
             //箱の回転を変える
-            int movedire = Random.Range(0, 2);
-            if(movedire == 0)
-            {
-                movedire = -1;
-            }
-            PresentBoxs[i].GetComponent<BoxContoller>().move = Random.Range(90, 180) * movedire;
+            Partscs.MakeBox_Speed(PresentBoxs[i]);        
         }
     }
 }

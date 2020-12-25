@@ -11,6 +11,8 @@ public class BoxContoller : MonoBehaviour
     GameObject[] childObject;
     public GameObject GameController;
 
+    MakeBoxParts Partscs;
+
     //回転速度
     public float move;
 
@@ -19,8 +21,9 @@ public class BoxContoller : MonoBehaviour
     {
         GameController = GameObject.FindGameObjectWithTag("GameController");
 
-        //rigidBody = gameObject.GetComponent<Rigidbody>();
+        Partscs = GameController.GetComponent<MakeBoxParts>();
 
+        Partscs.MakeBox_Speed(gameObject);
         //箱を構成するすべてのオブジェクト
         childObject = new GameObject[gameObject.transform.childCount];
         for(int i = 0; i < childObject.Length; i++)
