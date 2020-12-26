@@ -72,11 +72,8 @@ public class MakeBox : MonoBehaviour
             color = Patter[boxcolor[i]];
            
             //すべての面の色をそろえる
-            for(int j = 0; j < 6; j++)
-            {
-                Partscs.MakeBox_SolidColor(PresentBoxs[i], color[0]);
-                //PresentBoxs[i].transform.GetChild(j).gameObject.GetComponent<SpriteRenderer>().sprite = color[0];
-            }
+            Partscs.MakeBox_SolidColor(PresentBoxs[i], color[0]);
+            
             //面の数字情報を変える
             for(int j = 0; j < boxnumber.GetLength(1); j++)
             {
@@ -84,7 +81,7 @@ public class MakeBox : MonoBehaviour
             }
 
             //面の位置情報を入れ替える
-
+            Partscs.MakeBox_RandomChange(PresentBoxs[i]);
 
             //箱の回転を変える
             Partscs.MakeBox_Speed(PresentBoxs[i]);        

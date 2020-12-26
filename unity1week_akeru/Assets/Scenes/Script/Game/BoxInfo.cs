@@ -13,7 +13,7 @@ public class BoxInfo : MonoBehaviour
     void Start()
     {
         boxnum = 4;
-        boxpanel = 4;
+        boxpanel = GameParameter.color_num[1];
         boxcolor = new int[boxnum];
         boxnumber = new int[boxnum, boxpanel];
 
@@ -33,5 +33,19 @@ public class BoxInfo : MonoBehaviour
             }
         }
         GetComponent<MakeBox>().PresentBoxMake(boxcolor, boxnumber);
+    }
+
+    //ボックスの値を計算する
+    public int[] BoxInfo_Cul()
+    {
+        int[] num = new int[boxnum];
+        for (int i = 0; i < boxnum; i++)
+        {
+            for (int j = 0; j < boxpanel; j++)
+            {
+                num[i] += boxnumber[i, j];
+            }
+        }
+        return num;
     }
 }

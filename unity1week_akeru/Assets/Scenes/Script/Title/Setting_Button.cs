@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Setting_Button : MonoBehaviour
 {
-    // Start is called before the first frame update
+    TitleController Controllercs;
+    GameObject ControllerObj;
+
     void Start()
     {
-        
+        ControllerObj = GameObject.FindGameObjectWithTag("GameController");
+        Controllercs = ControllerObj.GetComponent<TitleController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnMouseDown()
     {
-        
+        Controllercs.SettingClick();
     }
 }
