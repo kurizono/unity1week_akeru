@@ -58,7 +58,6 @@ public class BoxInfo : MonoBehaviour
             //数字を決める
             for (int j = 0; j < boxwritenum_info[UnityEngine.Random.Range(0, boxwritenum_info.Length)] + 1; j++)
             {
-                Debug.Log(j);
                 boxnumber[i, j] = UnityEngine.Random.Range(1, 101);
             }
         }

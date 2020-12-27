@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
 {
     BoxInfo BoxInfocs;
     MakeBox MakeBoxcs;
+    MakeItem MakeItemcs;
 
     float dark;
     float time;
@@ -23,6 +24,7 @@ public class GameController : MonoBehaviour
     {
         BoxInfocs = GetComponent<BoxInfo>();
         MakeBoxcs = GetComponent<MakeBox>();
+        MakeItemcs = GetComponent<MakeItem>();
 
         GameParameter.question_num = 0;
     }
@@ -65,6 +67,7 @@ public class GameController : MonoBehaviour
             {
                 ans = 1;
                 GameParameter.question_num += 1;
+                MakeItemcs.ItemDrop();
                 First();
             }
         }

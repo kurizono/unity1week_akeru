@@ -177,7 +177,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 564faafae4279b6489fc88d54b8f5af6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -215,6 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d16072b3d11314dbd9693d325e45ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: 0
+  time: 0
 --- !u!1 &774686055
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +316,7 @@ GameObject:
   - component: {fileID: 1097780891}
   - component: {fileID: 1097780894}
   - component: {fileID: 1097780895}
+  - component: {fileID: 1097780896}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: GameController
@@ -363,6 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a99a85e430e86940aedee0e1e753752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxcolor_info: 
+  boxwritenum_info: 
 --- !u!114 &1097780891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +439,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0338145dc3e6e544a87616e949cd2f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1097780896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097780887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c44f58e4f5821e4fbb14dc032e3fdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arrow: {fileID: 21300000, guid: 41fa1e2991302db449a0fdacabaa7980, type: 3}
+  Return: {fileID: 21300000, guid: 4959fb1d1f30b1345bff051fc7d0b6ea, type: 3}
+  Cat: {fileID: 21300000, guid: 564faafae4279b6489fc88d54b8f5af6, type: 3}
+  Ufo: {fileID: 21300000, guid: f5554f019c9ec424aa07af555e655c78, type: 3}
+  blue: {fileID: 21300000, guid: c315ba0b1fcddea4286459699819c7f8, type: 3}
+  green: {fileID: 21300000, guid: 6d29384aeed65344fb48d363aa3446e5, type: 3}
+  yellow: {fileID: 21300000, guid: d4aed1a0814db524eb28992281350e43, type: 3}
+  purple: {fileID: 21300000, guid: 45751cd7cad87874aa55c59ebf5bc34d, type: 3}
+  red: {fileID: 21300000, guid: af6f31104798ea54b8522595d3f3dce2, type: 3}
+  white: {fileID: 21300000, guid: 58b12c477486f844b90b573cf6ccc3a0, type: 3}
+  eye: {fileID: 21300000, guid: e54a4d33bdf3ca046b8e3d2381015d80, type: 3}
+  boy: {fileID: 21300000, guid: 9a6a8747ed362034398e1595c2382f4a, type: 3}
+  girl: {fileID: 21300000, guid: 384040267cfe9374b9f13980e30987ab, type: 3}
+  nogeneral: {fileID: 21300000, guid: 228f0d8b25962fb4691dddfd2ef4f246, type: 3}
+  credit: {fileID: 21300000, guid: 4a4505c128d6045479b1d099fb193e5d, type: 3}
+  catstamp: {fileID: 21300000, guid: 21005cfd5c5fa124ba64d59e3917b708, type: 3}
+  DropObj: {fileID: 8720769154366043232, guid: 52464252a5c6f974080b225d69a66a03, type: 3}
 --- !u!1 &1234690207
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,5 +762,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CatBoxCollect
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5099606404460248265, guid: 777d9bc6b16365f4eaea1bfc502a2f1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: CatBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2472011660065887012, guid: 777d9bc6b16365f4eaea1bfc502a2f1d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 777d9bc6b16365f4eaea1bfc502a2f1d, type: 3}
