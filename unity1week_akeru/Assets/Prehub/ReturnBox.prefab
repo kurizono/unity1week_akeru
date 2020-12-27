@@ -532,7 +532,6 @@ GameObject:
   - component: {fileID: 2159809334314626701}
   - component: {fileID: 2159809334314626690}
   - component: {fileID: 8751065433174470108}
-  - component: {fileID: 836031689765916904}
   m_Layer: 0
   m_Name: ReturnBox
   m_TagString: cube
@@ -601,18 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adcacea060a82e429a94adb8d246175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameControllerObj: {fileID: 0}
+  childObject: []
   move: 0
   color_dark: 1
---- !u!114 &836031689765916904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751065433174470110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6610d2f8ef450d44b9af81134c2202fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Box_Color: {r: 1, g: 1, b: 1, a: 1}

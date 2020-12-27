@@ -12,7 +12,7 @@ public class GameParameter : MonoBehaviour
     public static int[] color_num = new int[4];
 
     //アイテム
-    public static int[] item = new int[10];
+    public static int[] item = new int[14];
 
     //正解数
     public static int question_num = 0;
