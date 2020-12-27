@@ -41,9 +41,14 @@ public class ColorSetting : MonoBehaviour
     }
     public void Obj_Click(GameObject obj)
     {
-        for(int i = 0; i < Colors.Length; i++)
+        int effective = 0;
+        for (int i = 0; i < GameParameter.color_switch.Length; i++)
         {
-            if(obj == Colors[i])
+            effective += GameParameter.color_switch[i];
+        }
+        for (int i = 0; i < Colors.Length; i++)
+        {
+            if (obj == Colors[i])
             {
                 GameParameter.color_switch[i] = (GameParameter.color_switch[i] + 1) % 2;
                 if (GameParameter.color_switch[i] == 0)
@@ -52,9 +57,13 @@ public class ColorSetting : MonoBehaviour
                 }
                 else if (GameParameter.color_switch[i] == 1)
                 {
-                    Colors[i].GetComponent<BoxContoller>().Box_Color = colormode[1];
+                    if (effective < GameParameter.color_switch.Length - 1)
+                    {
+                        Colors[i].GetComponent<BoxContoller>().Box_Color = colormode[1];
+                    }
                 }
             }
+
         }
     }
 }

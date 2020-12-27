@@ -39,15 +39,16 @@ public class MakeBox : MonoBehaviour
         Partscs = GetComponent<MakeBoxParts>();
 
         //素材インポート
-        RedPatter = Resources.LoadAll<Sprite>("RedSquare");
+       
         BluePatter = Resources.LoadAll<Sprite>("BlueSquare");
         GreenPatter = Resources.LoadAll<Sprite>("GreenSquare");
         YellowPatter = Resources.LoadAll<Sprite>("YellowSquare");
         PurplePatter = Resources.LoadAll<Sprite>("PurpleSquare");
+        RedPatter = Resources.LoadAll<Sprite>("RedSquare");
         WhitePatter = Resources.LoadAll<Sprite>("WhiteSquare");
         Patter = new List<Sprite[]>
         {
-            RedPatter, BluePatter, GreenPatter, YellowPatter, PurplePatter, WhitePatter
+            BluePatter, GreenPatter, YellowPatter, PurplePatter, RedPatter, WhitePatter
         };
 
         //4つのプレゼント創る

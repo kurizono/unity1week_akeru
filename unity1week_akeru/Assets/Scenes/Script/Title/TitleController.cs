@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TitleController : MonoBehaviour
 {
-    public GameObject FirstBoxes, Story, Setting, Arrow, LeftArrow;
+    public GameObject FirstBoxes, Story, Setting1, Setting2, Arrow, LeftArrow;
     public GameObject Title, SettingMesseage1, SettingMesseage2;
 
     private enum titlestatus
@@ -16,6 +16,7 @@ public class TitleController : MonoBehaviour
         Setting
     }
     titlestatus nowstatus;
+    int settingnum = 0;
 
     private enum Move_byarrow
     {
@@ -61,7 +62,8 @@ public class TitleController : MonoBehaviour
     {
         FirstBoxes.SetActive(true);
         Story.SetActive(false);
-        Setting.SetActive(false);
+        Setting1.SetActive(false);
+        Setting2.SetActive(false);
         Arrow.SetActive(false);
         LeftArrow.SetActive(false);
         Title.SetActive(true);
@@ -92,19 +94,32 @@ public class TitleController : MonoBehaviour
 
     public void SettingClick()
     {
-        FirstBoxes.SetActive(false);
-        Setting.SetActive(true);
-        Arrow.SetActive(true);
-        LeftArrow.SetActive(true);
-        Title.SetActive(false);
-        SettingMesseage1.SetActive(true);
-        nowstatus = titlestatus.Setting;
+        switch (settingnum) {
+            case 0:
+                FirstBoxes.SetActive(false);
+                Setting1.SetActive(true);
+                Setting2.SetActive(false);
+                Arrow.SetActive(true);
+                LeftArrow.SetActive(true);
+                Title.SetActive(false);
+                SettingMesseage1.SetActive(true);
+                SettingMesseage2.SetActive(false);
+                nowstatus = titlestatus.Setting;
+                break;
+            case 1:
+                Setting1.SetActive(false);
+                Setting2.SetActive(true);
+                SettingMesseage1.SetActive(false);
+                SettingMesseage2.SetActive(true);
+                break;
+        } 
     }
 
     public void RightArrowClick()
     {
         if (movestatus == Move_byarrow.Stop)
         {
+            Debug.Log(nowstatus);
             switch (nowstatus)
             {
                 case titlestatus.Story:
@@ -112,12 +127,20 @@ public class TitleController : MonoBehaviour
                     movetime = 0;
                     break;
                 case titlestatus.Setting:
+                    settingnum = (settingnum + 1) % 2;
+                    SettingClick();
                     break;
             }
         }
     }
     public void LeftArrowClick()
     {
-
+        switch (nowstatus)
+        {
+            case titlestatus.Setting:
+                settingnum = (settingnum + 3) % 2;
+                SettingClick();
+                break;
+        }
     }
 }
