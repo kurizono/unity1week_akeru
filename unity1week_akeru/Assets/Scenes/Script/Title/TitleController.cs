@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TitleController : MonoBehaviour
 {
-    public GameObject FirstBoxes, Story, Credit, Setting1, Setting2;
+    public GameObject FirstBoxes, Story, Credit, Explain, Setting1, Setting2;
     public GameObject RightArrow, LeftArrow, ReturnArrow;
     public GameObject Title, SettingMesseage1, SettingMesseage2;
 
@@ -55,6 +55,9 @@ public class TitleController : MonoBehaviour
                 case titlestatus.Story:
                     Story.transform.Rotate(0, movedistance * 90 / Rotatetime, 0);
                     break;
+                case titlestatus.Explain:
+                    Explain.transform.Rotate(0, movedistance * 90 / Rotatetime, 0);
+                    break;
             }
         }
     }
@@ -64,6 +67,7 @@ public class TitleController : MonoBehaviour
         FirstBoxes.SetActive(true);
         Story.SetActive(false);
         Credit.SetActive(false);
+        Explain.SetActive(false);
         Setting1.SetActive(false);
         Setting2.SetActive(false);
         RightArrow.SetActive(false);
@@ -88,6 +92,11 @@ public class TitleController : MonoBehaviour
 
     public void ExplainClick()
     {
+        FirstBoxes.SetActive(false);
+        Title.SetActive(false);
+        Explain.SetActive(true);
+        RightArrow.SetActive(true);
+        ReturnArrow.SetActive(true);
         nowstatus = titlestatus.Explain;
     }
 
@@ -138,6 +147,10 @@ public class TitleController : MonoBehaviour
                 case titlestatus.Setting:
                     settingnum = (settingnum + 1) % 2;
                     SettingClick();
+                    break;
+                case titlestatus.Explain:
+                    movestatus = Move_byarrow.Move;
+                    movetime = 0;
                     break;
             }
         }
