@@ -15,7 +15,7 @@ public class CollectionController : MonoBehaviour
         "まだぷれぜんとしてないにゃ",
         "はこをあけてげっとするにゃ"
     };
-    string[] Cat1Talk = new string[14]
+    string[] Cat1Talk = new string[16]
     {
         "どこにでもあるやじるしにゃ！",
         "もどるためのやじるしにゃ！",
@@ -31,8 +31,10 @@ public class CollectionController : MonoBehaviour
         "あおいろだからおとこにゃ！",
         "あかいろだからおんなにゃ！",
         "くろいろだからむせいべつにゃ！",
+        "かみさまのなまえにゃ！",
+        "しんせいなるねこすたんぷにゃ！"
     };
-    string[] Cat2Talk = new string[14]
+    string[] Cat2Talk = new string[16]
     {
         "かずがおおすぎてみあきたにゃ？",
         "もちろんかこにももどれるにゃ？",
@@ -48,6 +50,8 @@ public class CollectionController : MonoBehaviour
         "そらとうみはおとこにゃ？",
         "ひーろーはみんなおんなにゃ？",
         "はらぐろはみんなむせいべつにゃ？",
+        "かみさまかわったにゃ？",
+        "ねこすたんぷはぜったいにゃ！"
     };
     int nownum = 0;
     int allnum;

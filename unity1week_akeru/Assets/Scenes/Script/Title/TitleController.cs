@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TitleController : MonoBehaviour
 {
-    public GameObject FirstBoxes, Story, Setting1, Setting2, Arrow, LeftArrow;
+    public GameObject FirstBoxes, Story, Credit, Setting1, Setting2;
+    public GameObject RightArrow, LeftArrow, ReturnArrow;
     public GameObject Title, SettingMesseage1, SettingMesseage2;
 
     private enum titlestatus
@@ -62,10 +63,12 @@ public class TitleController : MonoBehaviour
     {
         FirstBoxes.SetActive(true);
         Story.SetActive(false);
+        Credit.SetActive(false);
         Setting1.SetActive(false);
         Setting2.SetActive(false);
-        Arrow.SetActive(false);
+        RightArrow.SetActive(false);
         LeftArrow.SetActive(false);
+        ReturnArrow.SetActive(false);
         Title.SetActive(true);
         SettingMesseage1.SetActive(false);
         SettingMesseage2.SetActive(false);
@@ -78,7 +81,8 @@ public class TitleController : MonoBehaviour
         FirstBoxes.SetActive(false);
         Title.SetActive(false);
         Story.SetActive(true);
-        Arrow.SetActive(true);
+        RightArrow.SetActive(true);
+        ReturnArrow.SetActive(true);
         nowstatus = titlestatus.Story;
     }
 
@@ -89,6 +93,10 @@ public class TitleController : MonoBehaviour
 
     public void CreditClick()
     {
+        FirstBoxes.SetActive(false);
+        Title.SetActive(false);
+        Credit.SetActive(true);
+        ReturnArrow.SetActive(true);
         nowstatus = titlestatus.Credit;
     }
 
@@ -99,7 +107,8 @@ public class TitleController : MonoBehaviour
                 FirstBoxes.SetActive(false);
                 Setting1.SetActive(true);
                 Setting2.SetActive(false);
-                Arrow.SetActive(true);
+                RightArrow.SetActive(true);
+                ReturnArrow.SetActive(true);
                 LeftArrow.SetActive(true);
                 Title.SetActive(false);
                 SettingMesseage1.SetActive(true);
@@ -119,7 +128,7 @@ public class TitleController : MonoBehaviour
     {
         if (movestatus == Move_byarrow.Stop)
         {
-            Debug.Log(nowstatus);
+
             switch (nowstatus)
             {
                 case titlestatus.Story:
